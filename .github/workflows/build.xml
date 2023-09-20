@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="YourProjectName" default="compile" basedir=".">
+    <!-- Define properties -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="main.class" value="com.example.MainClass"/> <!-- Change to your main class -->
+
+    <!-- Define the classpath -->
+    <path id="classpath">
+        <fileset dir="lib">
+            <include name="*.jar"/> <!-- Add any external JARs your project depends on in the 'lib' directory -->
+        </fileset>
+    </path>
+
+    <!-- Clean task -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <!-- Compile task -->
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="classpath"/>
+    </target>
+
+    <!-- Run the compiled Java application -->
+    <target name="run" depends="compile">
+        <java classname="${main.class}" classpathref="classpath"/>
+    </target>
+</project>
