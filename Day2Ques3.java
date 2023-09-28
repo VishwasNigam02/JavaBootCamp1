@@ -41,5 +41,59 @@ public class Main
     {
         this.price= price;
     }
-    
+    public static void setMaxDiscountAllowed(float maxDiscountAllowed)
+    {
+        this.maxDiscountAllowed=maxDiscountAllowed;
+    }
+    public static float getMaxDiscountAllowed()
+    {
+        return maxDiscountAllowed;
+    }
+     public static int getMonthOfManufacture()
+    {
+        return  monthOfManufacture;
+    }
+    public static void setMonthOfManufacture(int monthOfManufacture)
+    {
+        this.monthOfManufacture = monthOfManufacture;
+    }
+    public static int getYearOfManufacture()
+    {
+        return yearOfManufacture;
+    }
+    public static void setYearOfManufacture(int yearOfManufacture)
+    {
+        this.yearOfManufacture = yearOfManufacture;
+    }
+    public static boolean getImported(boolean imported)
+    {
+        this.imported= imported;
+    }
+    public static void setImported()
+    {
+        return imported;
+    }
+   public static float getDiscountedPrice() 
+   {
+       float a= getPrice();
+       float b= getMaxDiscountAllowed();
+       return a-b;
+   }
+   public static float getTotalPriceForItems(int count)
+   {
+       float a= getPrice();
+       return a*count;
+   }
+   public static float getDiscountedPriceForItems(int count)
+   {
+       float a= getDiscountedPrice();
+       return a*count;
+   }
+}
+
+public class TestMain()
+{
+    public static void main (String[] args) {
+        /* code */
+    }
 }
